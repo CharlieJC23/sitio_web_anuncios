@@ -18,8 +18,8 @@
     <div id="inicio">
         <header>
             <div>
-                <a href="index.php"><img src="./images/logo.png" height="80px" /></a>
-                <nav class="navbar navbar-expand-sm" style="background-color: #dc3545;">
+                <a href="menu_usuario.php"><img src="./images/logo.png" height="80px" /></a>
+                <nav class="navbar navbar-expand-sm" style="background-color: deepskyblue;">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">VIDEOJUEGOS</a>

@@ -62,20 +62,8 @@
                 </div>
             </div>
         </div>
-
-        <div id="artc">
-            <div class="container">
-                <div class="card" style="width:150px">
-                    <img class="card-img-top" src="image/SW/animal-crossing-nsw_1_1.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h6 class="card-title" style="font-family: Century Gothic;">AC</h6>
-                        <span style="color: red">PRECIO: $1,499 </span>
-                        <center><a href="Articulo3.html" class="btn btn-danger btn-sm stretched-link ">COMPRAR</a></center>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+
 
     <footer style="background-color: black;" class="page-footer font-small mdb-color  lighten-3 pt-4">
         <div class="container text-center text-md-left">

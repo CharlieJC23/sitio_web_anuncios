@@ -19,7 +19,7 @@
         <header>
             <div>
                 <a href="index.php"><img src="./images/logo.png" height="80px" /></a>
-                <nav class="navbar navbar-expand-sm" style="background-color: #dc3545;">
+                <nav class="navbar navbar-expand-sm" style="background-color: orangered;">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="videojuegos.php" style="color: white;">VIDEOJUEGOS</a>
@@ -44,9 +44,46 @@
                         </li>
                     </ul>
                 </nav>
-        </header>
-    </div>
-</body>
+        </header> <br><br>
+
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+                <li data-target="#demo" data-slide-to="4"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="libros.php" target="_blank">
+                        <img src="./images/libros.jpg" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <a href="series.php" target="_blank">
+                        <img src="./images/series.jpg" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <a href="videojuegos.php" target="_blank">
+                        <img src="./images/videojuegos.jpg" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <a href="restaurantes.php" target="_blank">
+                        <img src="./images/restaurantes.jpg" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <a href="peliculas.php" target="_blank">
+                        <img src="./images/peliculas.png" class="mx-auto d-block">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+</body><br>
 
 <footer style="background-color: black;" class="page-footer font-small mdb-color  lighten-3 pt-4">
     <div class="container text-center text-md-left">

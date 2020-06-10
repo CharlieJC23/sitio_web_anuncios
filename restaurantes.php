@@ -19,7 +19,7 @@
         <header>
             <div>
                 <a href="index.php"><img src="./images/logo.png" height="80px" /></a>
-                <nav class="navbar navbar-expand-sm" style="background-color: #dc3545;">
+                <nav class="navbar navbar-expand-sm" style="background-color: violet;">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="videojuegos.php" style="color: white;">VIDEOJUEGOS</a>

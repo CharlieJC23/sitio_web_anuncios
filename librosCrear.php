@@ -13,6 +13,8 @@
     $consultaidioma=$mysqli->query($queryid);
     $querylibreria="SELECT id,libreria FROM libreria";
     $consultalibreria=$mysqli->query($querylibreria);
+    $queryeditorial="SELECT id,editorial FROM editorial";
+    $consultaeditorial=$mysqli->query($queryeditorial);
     ?>
 </head>
 <body>
@@ -21,7 +23,7 @@
         <div class="card" text-center>
             <div class="card-body">
                 <!--INICIO CUESTIONARIO------------------------------------------------------------------->
-                <form  action="controllerLibros/agregarLibro.php" method="post">
+                <form enctype="multipart/form-data" action="controllerLibros/agregarLibro.php" method="post">
                 <h3 class="card-title" >Agregar nuevo libro</h3><br><br>
                 <div class="form-row">
                     <div class="col">
@@ -31,7 +33,12 @@
                    </div>
                    <div class="col">
                         <label class="card-text">Ingrese la editorial:</label><br>
-                        <input type="text" id="editorial" name="editorial" class="form-control form-control-sm" required="required" /><br>
+                        <select class="form-control" id="editorial" name="editorial" required="required">
+                        <option data-toggle="modal" data-target="#exampleModal2">Agregar Editorial</option>
+                        <?php while($fila=$consultaeditorial->fetch_assoc()){?>
+                                <option value="<?php echo $fila['id'];?>"><?php echo $fila['editorial'];?></option>  
+                            <?php }?>  
+                        </select>
                     </div>
                </div>
                 <label class="card-text">Ingrese el autor: </label>
@@ -57,8 +64,8 @@
                         
                     </div>  
                     <div class="col">
-                        <label class="card-text">Ingrese la fecha de cuando fue escrito:</label><br>
-                        <input type="date" id="fecha" name="fecha" class="form-control form-control-sm"/><br>
+                        <label class="card-text">Ingrese el año en que fue publicado:</label><br>
+                        <input type="number" id="fecha" name="fecha" class="form-control form-control-sm"/><br>
                     </div>
                 </div>
                 <div class="form-row">
@@ -86,8 +93,14 @@
                          <input type='number' step='0.01' value='0.00' placeholder='0.00' id="precio" name="precio" class="form-control form-control-sm"/><br>
                     </div>
                     <div class="col">
-                     </div>
+                     <label class="card-text">Foto:</label><br>
+                     <input type='file' id="foto" name="foto" class="form-control form-control-sm"/>
+                    </div>
                 </div>   
+                <div class="form-row">
+                        <label class="card-text">Ingrese descripción del libro:</label><br>
+                         <input type='text' id="des" name="des" class="form-control form-control-sm"/><br>
+                   </div> <br>
                 <center><input id="btn" type="submit"  value="Guardar" class="btn btn-success"  style="width: 330px; 
                      height: 40px; margin: 0 auto;  justify-content: center;"/></center>
                         </form><br>
@@ -99,7 +112,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
                     <!-----------------------------------------FORMULARIO------------------------------------------------->
-            <form action="controllerLibros/agregarLibreria.php" method="post">
+            <form action="controllerLibros/agregarEditorial.php" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Agregar Libreria</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -127,18 +140,68 @@
                         </div>
                         <label class="card-text">Ingrese el numero telefonico:</label><br>
                         <div class="form-group">
-                            <input type="text" id="tel" name="tel" class="form-control form-control-sm" />
+                            <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" id="tel" name="tel" class="form-control form-control-sm" />
                         </div>
                         <label class="card-text">Ingrese los dias laborales:</label><br>
                         <div class="form-group">
                             <input type="text" id="diaslaborales" name="diaslaborales" class="form-control form-control-sm" placeholder="lunes a viernes" />
                         </div>
-                        <label class="card-text">Ingrese el email:</label><br>
+                        <label class="card-text">Ingrese su email:</label><br>
                         <div class="form-group">
                             <input type="email" id="email" name="email" class="form-control form-control-sm" />
                         </div>
                 </div>
                     <!------------------------------------------------------------------------------------------>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" name="submitSave" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal  para agregar editorial --------------------------------------------------------------------------------------->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="controllerLibros/agregarEditorial.php" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Editorial</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Escribe el nombre de la editorial</h4>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="editorial" id="editorial">
+                     </div>
+                </div>
+                <div class="modal-body">
+                    <h4>Selecciona el pais</h4>
+                    <div class="form-group">
+                        <select class="form-control" id="pais" name="pais" required="required">
+                             <option value="Alemania">Alemania</option>
+                             <option value="Argentina">Argentina</option>
+                             <option value="Australia">Australia</option>
+                             <option value="Austria">Austria</option>
+                             <option value="Bélgica">Bélgica</option>
+                             <option value="Bolivia">Bolivia</option>
+                             <option value="Brasil">Brasil</option>
+                             <option value="Chile">Chile</option>
+                             <option value="China">China</option>
+                             <option value="Colombia">Colombia</option>
+                             <option value="España">España</option>
+                             <option value="Estados Unidos">Estados Unidos</option>
+                             <option value="Francia">Francia</option>
+                             <option value="Japón">Japón</option>
+                             <option value="Italia">Italia</option>
+                             <option value="México">México</option>
+                             <option value="Panamá">Panamá</option>
+                             <option value="Perú">Perú</option>
+           </select>
+                     </div>
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     <button type="submit" name="submitSave" class="btn btn-primary">Enviar</button>

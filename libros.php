@@ -12,72 +12,27 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <?php include('templates/header.php'); ?>
 </head>
-
 <body>
-    <div id="inicio">
-        <header>
-            <div>
-                <a href="index.php"><img src="./images/logo.png" height="80px" /></a>
-                <nav class="navbar navbar-expand-sm" style="background-color: #dc3545;">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="videojuegos.php" style="color: white;">VIDEOJUEGOS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="restaurantes.php" style="color: white;">COMIDA</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="series.php" style="color: white;">SERIES</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="libros.php" style="color: white;">LIBROS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="peliculas.php" style="color: white;">PELICULAS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login_usuario.php" style="color: white;">INICIAR SESION</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="registrate.php" style="color: white;">REGISTRATE</a>
-                        </li>
-                    </ul>
-                </nav>
-        </header>
-    </div>
-
-    <footer style="background-color: black;" class="page-footer font-small mdb-color  lighten-3 pt-4">
-        <div class="container text-center text-md-left">
-            <div class="row">
-                <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
-                    <h5 style="color: white;" class="font-weight-bold text-uppercase mb-4">PublicaTec</h5>
-                    <p style="color: white;">Somos una pagina web que permite a cualquier
-                        usuario promocionar sus articulos de diversa indole.
-                        Ponemos a tu alcance un amplio catalogo donde podras encontrar lo que más te apasiona del mundo
-                        desde la comodidad de tu casa.</p>
+<div id="menuopc">
+            <div style="width: 200px; height: 400;" class="container">
+                <h4>Genero:</h4>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">Accion</a>
+                    <a href="#" class="list-group-item list-group-item-action">Ciencia Ficcion</a>
+                    <a href="#" class="list-group-item list-group-item-action">Deportes</a>
+                    <a href="#" class="list-group-item list-group-item-action">Infantil</a>
+                    <a href="#" class="list-group-item list-group-item-action">Mecha</a>
+                    <a href="#" class="list-group-item list-group-item-action">Misterio</a>
+                    <a href="#" class="list-group-item list-group-item-action">Romance</a>
+                    <a href="#" class="list-group-item list-group-item-action">Shonen</a>
+                    <a href="#" class="list-group-item list-group-item-action">Terror</a>
                 </div>
-                <hr class="clearfix w-100 d-md-none">
-                <hr class="clearfix w-100 d-md-none">
-                <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
-                    <h5 style="color: white;" class="font-weight-bold text-uppercase mb-4">ACERCA DE</h5>
+             <a class="btn btn-danger" href="librosCrear.php" role="button">Agregar libro</a><br>
+            </div>
+</div><br>
 
-                    <ul class="list-unstyled">
-                        <li>
-                            <p style="color: white;">Dirección: <br> Toluca, EDO MX 50260, MX</p>
-                        </li>
-                        <li>
-                            <p style="color: white;">Correo: <br> publicatec@ventaonline.com</p>
-                        </li>
-                        <li>
-                            <p style="color: white;">Tel: <br> + 52 219 123 10</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div style="color: white;" class="footer-copyright text-center py-3">© 2020<a href=""> PublicaTec.com</a>
-            </div>
-    </footer>
+<?php include('templates/footer.php');?>
 </body>
-
 </html>

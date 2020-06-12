@@ -5,5 +5,5 @@
 
   session_destroy();
 
-  header('Location: /sitio_web_anuncios');
+  header('Location: ./index.php');
 ?>

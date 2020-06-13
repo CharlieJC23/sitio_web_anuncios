@@ -1,45 +1,89 @@
 <html>
-    <head>
-    <title>Login usuarios con PHP y JQuery</title>
-    <meta charset='utf-8'>
-    <meta htPage Titletp-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
 
-    </head>
-    <body>
-        <div class="modal-dialog text-center">
-            <div class="col-sm-8 main-section">
-                <div class="modal-content">
-                    <div class="col-12">
-                        <img src="resources/images/login.png">  
-                    </div>
-                    <form class="col-12" action="login.php" method="post" id="formlg">
-                        <div class="form-group">
-                            <label for="inputUsuario" class="col-sm-2 control-label">Usuario</label>
-                            <div class="col-12">
-                                <input type="text" class="form-control" name="usuariolg" id="inputEmail3" placeholder="usuario" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-                            <div class="col-12">
-                                <input type="password" class="form-control" name="passlg" id="inputPassword3" placeholder="Password" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-success btonlg">Iniciar Sesion</button>
-                            </div>
-                        </div>
-                        </form>
-                </div> 
-            </div>
-        </div>
-    </body>
+<head>
+	<title>Login usuarios con PHP y JQuery</title>
+	<meta charset='utf-8'>
+	<meta htPage Titletp-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<!-- BOOTSTRAP Y JQUERY AGREGADOS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Validacion para el formulario con jquery-->
+	<!-- Validacion para el formulario con jquery-->
+	<script>
+		function Validar() {
+			var usuario = $('#inputUsuario');
+			var password = $('#inputPassword');
+			var bandera = false;
+			require("conexion.php");
+
+			// Verificando si el usuario existe en la base de datos.
+			if ($comprueba_usuario && $comprueba_contrasena) {
+				bandera = true;
+			} else if ($comprueba_usuario == false) {
+				alert("Usuario incorrecto").slideUp(500);
+			} else if ($comprueba_contrasena == false) {
+				alert("Contraseña incorrecta").slideUp(500);
+			}
+
+			//Direccionamiento a la pagina principal
+			if (bandera) {
+				alert("Usuario incorrecto").slideUp(500);
+				// Redirecciono al usuario a la página principal del sitio.
+				$(location).attr('href', menu_usuario.php);
+			} else {
+				alert("Conexion fallida").slideUp(500);
+			}
+		} //Termina Validacion
+	</script>
+	<!--ESTILO DEL FORMULARIO-->
+	<style type="text/css">
+		body {
+			background: url(resources/images/login-portada.png) no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.main-section {
+			margin: 0 auto;
+			margin-top: 25%;
+			padding: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- FORMULARIO-->
+	<div class="modal-dialog text-center">
+		<div class="col-sm-8 main-section">
+			<div class="modal-content">
+				<div class="col-12">
+					<img src="resources/images/login.png">
+				</div>
+				<form class="col-12" action="" method="post" onsubmit="javascript: return Validar(this);">>
+					<div class="form-group">
+						<label for="inputUsuario" class="col-sm-2 control-label">Usuario</label>
+						<div class="col-12">
+							<input type="text" class="form-control" name="usuario" id="inputUsuario" placeholder="usuario" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword" class="col-sm-2 control-label">Password</label>
+						<div class="col-12">
+							<input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-12">
+							<button type="submit" class="btn btn-default">Iniciar Sesion</button>
+						</div>
+						<div>
+							<a href="menu_usuario.php">Cancelar</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--TERMINA FORMULARIO-->
+</body>
 </html>

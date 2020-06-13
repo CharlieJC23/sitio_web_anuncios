@@ -24,38 +24,34 @@
 <body>
   <?php
   session_start();
-  // Crear conexión con la base de datos.
-  $con = new mysqli("localhost", "root", "", "videojuegos");
-  if ($con->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
-    exit();
-  }
-  @mysqli_query($con, "SET NAMES 'utf8'");
-  ?>
-  <?php
-  //valirdar desde jquery
-  $usuario = $_POST['inputUsuario'];
-  $contrasena = $_POST['inputPassword'];
+   // Obtengo los datos cargados en el formulario de login.
+   $usuario = $_POST['usuario'];
+   $password = $_POST['password'];
+   // Datos para conectar a la base de datos.
+   $nombreServidor = "localhost";
+   $nombreUsuario = "root";
+   $passwordBaseDeDatos = "";
+   $nombreBaseDeDatos = "videojuegos";
 
-  // Consulta para comprobar usuario y contraseña.
-  $usuario_bd = sprintf("SELECT usuario FROM usuarios WHERE usuario=$usuario");
-  $comprueba_usuario = $conn->query($usuario_bd);
+   // Crear conexión con la base de datos.
+   $conn = new mysqli($nombreServidor, $nombreUsuario, $passwordBaseDeDatos, $nombreBaseDeDatos);
 
-  $contrasena_bd = sprintf("SELECT Password FROM usuarios WHERE Password=$contrasena");
-  $comprueba_contrasena = $conn->query($contrasena_bd);
+  // Validar la conexión de base de datos.
+if ($conn ->connect_error) {
+die("Connection failed: " . $conn ->connect_error);
+}
 
-  //mandar mensaje con jquery
-  if ($comprueba_usuario==false) {
-    echo '<script type="text/javascript">',
-    'validaUsuario();',
-    '</script>';
-  }else if($comprueba_contrasena){
-    echo '<script type="text/javascript">',
-    'validaContrasena();',
-    '</script>';
+// Consulta segura para evitar inyecciones SQL.
+$sql = sprintf("SELECT usuario FROM usuarios");
+$resultado = $conn->query($sql);
+  
+  if($resultado){
+    // Guardo en la sesión el email del usuario.
+    $prueba= $_SESSION['usuario'] = $usuario;
+    echo $prueba;
   }else{
-    echo'Error inesperado';
-  }
+    echo 'El email o password es incorrecto, <a href="index.html">vuelva a intenarlo</a>.<br/>';
+    }
   ?>
 </body>
 

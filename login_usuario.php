@@ -17,6 +17,16 @@
 			var bandera = false;
 			require("conexion.php");
 
+			<?php
+			session_start();
+			// Consulta para comprobar usuario y contraseña.
+			$usuario_bd = sprintf("SELECT usuario FROM usuarios WHERE usuario=$usuario");
+			$comprueba_usuario = $conn->query($usuario_bd);
+
+			$contrasena_bd = sprintf("SELECT Password FROM usuarios WHERE Password=$contrasena");
+			$comprueba_contrasena = $conn->query($contrasena_bd);
+			?>
+			
 			// Verificando si el usuario existe en la base de datos.
 			if ($comprueba_usuario && $comprueba_contrasena) {
 				bandera = true;
@@ -28,7 +38,6 @@
 
 			//Direccionamiento a la pagina principal
 			if (bandera) {
-				alert("Usuario incorrecto").slideUp(500);
 				// Redirecciono al usuario a la página principal del sitio.
 				$(location).attr('href', menu_usuario.php);
 			} else {
@@ -39,7 +48,7 @@
 	<!--ESTILO DEL FORMULARIO-->
 	<style type="text/css">
 		body {
-			background: url(resources/images/login-portada.png) no-repeat center center fixed;
+			background: url(images/login-portada.png) no-repeat center center fixed;
 			background-size: cover;
 		}
 
@@ -59,7 +68,7 @@
 				<div class="col-12">
 					<img src="resources/images/login.png">
 				</div>
-				<form class="col-12" action="" method="post" onsubmit="javascript: return Validar(this);">>
+				<form class="col-12" action="" method="post" onsubmit="javascript: return Validar(this);">
 					<div class="form-group">
 						<label for="inputUsuario" class="col-sm-2 control-label">Usuario</label>
 						<div class="col-12">
@@ -77,6 +86,7 @@
 							<button type="submit" class="btn btn-default">Iniciar Sesion</button>
 						</div>
 						<div>
+							<!--<button type="submit" class="btn btn-default">Registrarse</button> -->
 							<a href="menu_usuario.php">Cancelar</a>
 						</div>
 					</div>

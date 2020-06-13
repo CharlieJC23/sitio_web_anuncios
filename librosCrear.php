@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Libros</title>
-    <?php include('templates/header.php'); 
+    <?php  include('templates/nav.php'); 
     include('configlibros/db_connect.php');
     
     $query="SELECT id,categoria FROM categoria";

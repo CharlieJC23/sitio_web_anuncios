@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libros Detalle</title>
 <?php
-include('templates/header.php'); 
+include('templates/nav.php'); 
 include('configlibros/db_connect.php');
+
+if(isset($_GET['id'])){
 $id=$_GET['id'];
 //$id=5;
          //consulta de libros
@@ -20,6 +22,9 @@ $id=$_GET['id'];
          FROM libro l, libreria li WHERE li.id=l.libreria and l.id=$id";
          $consultalibreria=$mysqli->query($querylibreria);
          $filalibreria=$consultalibreria->fetch_assoc();
+}else{
+            header("Location:".$_SERVER['HTTP_REFERER']);  
+            }
  ?>
     
 </head>

@@ -84,6 +84,6 @@
 			</div>
 		</div>
 	</div>
-    <!-- TERMINA FORMULARIO-->
-    </body>
+	<!--TERMINA FORMULARIO-->
+</body>
 </html>

@@ -75,9 +75,8 @@
                     </ul>
                 </div>
             </div>
-            <div style="color: white;" class="footer-copyright text-center py-3">© 2020<a href=""> PublicaTec.com</a>
-            </div>
-    </footer>
+        </div>
+
 </body>
 
 </html>

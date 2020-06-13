@@ -1,0 +1,71 @@
+.area1 { grid-area: menu; }
+        .area2 { grid-area: main; }
+        .area3 { grid-area: right; }
+        .area4 { grid-area: footer; }
+
+        .contenedor {
+            display: grid;
+            grid-template-areas: 
+            'menu main right'
+            'menu footer footer';
+            /*'menu main main main right right'
+            'menu footer footer footer footer footer';*/
+            grid-gap:  3px;
+            border: 0px ;
+            padding: 3px;
+        }
+        .contenedor > div{
+            
+            font-size:  30px;
+            /*background-color: #fff1ef;
+            text-align: center;
+            padding: 20px 0;*/
+
+        }
+        .autor{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #dc3545;
+        }
+        .descripcion{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: small;
+        }
+        tr.linea {
+            border-bottom: 1px dotted;
+        }
+        .area2{
+            width: 500px;
+        }
+        .area1{
+            width: 250px;
+        }
+        .area3{
+            padding: 0px 30px;
+            width: 400px;
+        }
+        .campotizq{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            color: #dc3545;
+        }
+        .campotder{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+        .textos{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #dc3545;
+            font-size: x-large;
+        }
+        .textoTer{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 150%;
+        }
+        .textoCua{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: x-large;
+        }
+        .imgLibro{
+            width: 180px ;
+            height: 280px ; 
+        }

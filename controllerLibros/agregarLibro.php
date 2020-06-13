@@ -54,15 +54,39 @@ $query="SELECT id FROM autor where nombre='$autor' and appaterno='$autorap'";
     $idautor=$fila['id'];
     }
 //---------------------------------------------------------insertar dator en tabla libros-----------------------------
-    $query="INSERT INTO libro(titulo,autor,categoria,editorial,idioma,fecha,precio,libreria,descripcion,imagen) VALUES
-    ('$titulo','$idautor','$cat','$editorial','$idioma','$fecha','$precio','$libreria','$descripcion','$img')";
+    $query="INSERT INTO libro(titulo,autor,categoria,editorial,idioma,fecha,precio,descripcion,imagen) VALUES
+    ('$titulo','$idautor','$cat','$editorial','$idioma','$fecha','$precio','$descripcion','$img')";
+    //si se ha insertado el registro
     if($mysqli->query($query)){
+        //*obtener el id de el registro recien ingresado
+    $querylibro="SELECT MAX(id) AS id FROM libro";
+    $consultalibro=$mysqli->query($querylibro);
+    $filal=$consultalibro->fetch_assoc();
+    $idl=$filal['id'];
+    //insertado en la tabla libreria
+    $query2="INSERT INTO librerias(libreria,libro)VALUES ($libreria,$idl)";
+    if($mysqli->query($query2)){
+        //obtener registro mas reciente de libreria
+    $querylibreria="SELECT MAX(id) AS id FROM librerias";
+    $consultalibreria=$mysqli->query($querylibreria);
+    $filalib=$consultalibreria->fetch_assoc();
+    $idlibreria=$filalib['id'];
+    //actualizar la tabla libro
+    $agregarLibreria="UPDATE libro SET libreria=$idlibreria WHERE id=$idl";
+    }
+    else{
+        //si hay errores muestra el error sy es de mysql
+        echo("Error description: " . $mysqli -> error);
+    }
     //echo "Datos guardados";
+    
     ///guardar la imagen en la ruta
     if($img !=''){
         //mover la imagen en la carpeta
         move_uploaded_file($url_temp,$src);
-        echo "<span style='color:green;'>El archivo ha sido subido</span><br>";
+       // echo "<span style='color:green;'>El archivo ha sido subido</span><br>";
+       $idlib= $mysqli->insert_id;
+       header('Location: ../librosDetalle.php?id='.$idlib);
     }else{
     echo "Ha ocurrido un error, trate de nuevo!";
     } 

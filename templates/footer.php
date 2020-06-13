@@ -15,7 +15,6 @@
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
                     <h5 style="color: white;" class="font-weight-bold text-uppercase mb-4">ACERCA DE</h5>
-
                     <ul class="list-unstyled">
                         <li>
                             <p style="color: white;">Dirección: <br> Toluca, EDO MX 50260, MX</p>
@@ -31,7 +30,6 @@
             </div>
             <div style="color: white;" class="footer-copyright text-center py-3">© 2020<a href=""> PublicaTec.com</a>
             </div>
-        </div>    
     </footer>
     <!--------------------------------------------------------------------->
     </body>

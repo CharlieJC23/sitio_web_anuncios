@@ -18,8 +18,8 @@
     <div id="inicio">
         <header>
             <div>
-                <a href="index.php"><img src="./images/logo.png" height="80px" /></a>
                 <nav class="navbar navbar-expand-sm" style="background-color: lightslategray;">
+                    <a href="index.php"><img src="./images/logo.png" height="80px" /></a>
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="videojuegos.php" style="color: white;">VIDEOJUEGOS</a>
@@ -47,23 +47,38 @@
         </header>
 
         <div id="menuopc">
-            <div style="width: 200px; height: 400;" class="container">
-                <h4>Genero:</h4>
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">Accion</a>
-                    <a href="#" class="list-group-item list-group-item-action">Ciencia Ficcion</a>
-                    <a href="#" class="list-group-item list-group-item-action">Deportes</a>
-                    <a href="#" class="list-group-item list-group-item-action">Infantil</a>
-                    <a href="#" class="list-group-item list-group-item-action">Mecha</a>
-                    <a href="#" class="list-group-item list-group-item-action">Misterio</a>
-                    <a href="#" class="list-group-item list-group-item-action">Romance</a>
-                    <a href="#" class="list-group-item list-group-item-action">Shonen</a>
-                    <a href="#" class="list-group-item list-group-item-action">Terror</a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <h4>Genero:</h4>
+                        <div class="list-group justify-content: flex-start">
+                            <a href="#" class="list-group-item list-group-item-action">Accion</a>
+                            <a href="#" class="list-group-item list-group-item-action">Ciencia Ficcion</a>
+                            <a href="#" class="list-group-item list-group-item-action">Deportes</a>
+                            <a href="#" class="list-group-item list-group-item-action">Infantil</a>
+                            <a href="#" class="list-group-item list-group-item-action">Mecha</a>
+                            <a href="#" class="list-group-item list-group-item-action">Misterio</a>
+                            <a href="#" class="list-group-item list-group-item-action">Romance</a>
+                            <a href="#" class="list-group-item list-group-item-action">Shonen</a>
+                            <a href="#" class="list-group-item list-group-item-action">Terror</a>
+                        </div>
+                    </div>
+                    <div class="col-10">
+                        <div id="card-list" class="row h-100 justify-content-center">
+                            <div class="card m-3" style="width:170px;">
+                                <img class="card-img-top w-auto" src="./images/serie1.jpg" style="height: 15rem;" alt="Card image">
+                                <div class="card-body">
+                                    <h6 class="card-title" style="font-family: Century Gothic;">SUPERNATURAL</h6>
+                                    <center><a href="articulo.php" class="btn btn-danger btn-sm stretched-link ">VER</a></center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
-
 
     <footer style="background-color: black;" class="page-footer font-small mdb-color  lighten-3 pt-4">
         <div class="container text-center text-md-left">

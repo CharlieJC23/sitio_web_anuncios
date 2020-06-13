@@ -18,8 +18,8 @@
     <div id="inicio">
         <header>
             <div>
-                <a href="index.php"><img src="./images/logo.png" height="80px" /></a>
-                <nav class="navbar navbar-expand-sm" style="background-color: violet;">
+                <nav class="navbar navbar-expand-sm" style="background-color: purple;">
+                    <a href="index.php"><img src="./images/logo.png" height="80px" /></a>
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="videojuegos.php" style="color: white;">VIDEOJUEGOS</a>

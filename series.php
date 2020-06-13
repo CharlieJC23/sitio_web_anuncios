@@ -72,72 +72,12 @@
                                     <center><a href="articulo.php" class="btn btn-danger btn-sm stretched-link ">VER</a></center>
                                 </div>
                             </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/serie1.jpg" style="height: 15rem;" alt="Card image">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">SUPERNATURAL</h6>
-                                    <center><a href="articulo.php" class="btn btn-danger btn-sm stretched-link ">VER</a></center>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/serie1.jpg" style="height: 15rem;" alt="Card image">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">SUPERNATURAL</h6>
-                                    <center><a href="articulo.php" class="btn btn-danger btn-sm stretched-link ">VER</a></center>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/serie1.jpg" style="height: 15rem;" alt="Card image">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">SUPERNATURAL</h6>
-                                    <center><a href="articulo.php" class="btn btn-danger btn-sm stretched-link ">VER</a></center>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/serie1.jpg" style="height: 15rem;" alt="Card image">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">SUPERNATURAL</h6>
-                                    <center><a href="articulo.php" class="btn btn-danger btn-sm stretched-link ">VER</a></center>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/serie1.jpg" style="height: 15rem;" alt="Card image">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">SUPERNATURAL</h6>
-                                    <center><a href="articulo.php" class="btn btn-danger btn-sm stretched-link ">VER</a></center>
-                                </div>
-                            </div><div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/serie1.jpg" style="height: 15rem;" alt="Card image">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">SUPERNATURAL</h6>
-                                    <center><a href="articulo.php" class="btn btn-danger btn-sm stretched-link ">VER</a></center>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/serie1.jpg" style="height: 15rem;" alt="Card image">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">SUPERNATURAL</h6>
-                                    <center><a href="articulo.php" class="btn btn-danger btn-sm stretched-link ">VER</a></center>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/serie1.jpg" style="height: 15rem;" alt="Card image">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">SUPERNATURAL</h6>
-                                    <center><a href="articulo.php" class="btn btn-danger btn-sm stretched-link ">VER</a></center>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
-
-
-
-
-
     </div>
 
     <footer style="background-color: black;" class="page-footer font-small mdb-color  lighten-3 pt-4">

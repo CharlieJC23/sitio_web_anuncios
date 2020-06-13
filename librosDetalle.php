@@ -7,8 +7,8 @@
 <?php
 include('templates/header.php'); 
 include('configlibros/db_connect.php');
-//$id=$_GET['id'];
-$id=5;
+$id=$_GET['id'];
+//$id=5;
          //consulta de libros
          $query="SELECT l.id,titulo,nombre,libreria,appaterno,apmaterno,c.categoria,i.idioma,fecha,precio,imagen,l.descripcion,e.editorial
          FROM autor a, libro l, categoria c, editorial e, idiomas i WHERE l.id=$id and l.autor=a.id and 
@@ -16,8 +16,8 @@ $id=5;
          $consulta1=$mysqli->query($query);
          $fila=$consulta1->fetch_assoc();
          $idlib=$fila['libreria'];
-         $querylibreria="SELECT l.libreria, l.ubicacion,l.direccionweb,l.numero,l.email 
-         FROM libreria l, librerias li WHERE  li.id=$idlib  and li.libreria=l.id ";
+         $querylibreria="SELECT li.libreria,ubicacion,direccionweb,numero,email 
+         FROM libro l, libreria li WHERE li.id=l.libreria and l.id=$id";
          $consultalibreria=$mysqli->query($querylibreria);
          $filalibreria=$consultalibreria->fetch_assoc();
  ?>

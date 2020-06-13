@@ -99,7 +99,8 @@
                 </div>   
                 <div class="form-row">
                         <label class="card-text">Ingrese descripción del libro:</label><br>
-                         <input type='text' id="des" name="des" class="form-control form-control-sm"/><br>
+                        <textarea id="des" name="des" rows="8" cols="30" class="form-control form-control-sm"></textarea>
+                         
                    </div> <br>
                 <center><input id="btn" type="submit"  value="Guardar" class="btn btn-success"  style="width: 330px; 
                      height: 40px; margin: 0 auto;  justify-content: center;"/></center>
@@ -112,7 +113,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
                     <!-----------------------------------------FORMULARIO------------------------------------------------->
-            <form action="controllerLibros/agregarEditorial.php" method="post">
+            <form action="controllerLibros/agregarLibreria.php" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Agregar Libreria</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -134,17 +135,9 @@
                         <div class="form-group">
                             <input type="url" id="pagina" name="pagina" class="form-control form-control-sm" />
                         </div>
-                        <label class="card-text">Ingrese el horario:</label><br>
-                        <div class="form-group">
-                            <input type="text" id="horario" name="horario" class="form-control form-control-sm" placeholder="8:00-5:00"/>
-                        </div>
                         <label class="card-text">Ingrese el numero telefonico:</label><br>
                         <div class="form-group">
-                            <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" id="tel" name="tel" class="form-control form-control-sm" />
-                        </div>
-                        <label class="card-text">Ingrese los dias laborales:</label><br>
-                        <div class="form-group">
-                            <input type="text" id="diaslaborales" name="diaslaborales" class="form-control form-control-sm" placeholder="lunes a viernes" />
+                            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" id="tel" name="tel" class="form-control form-control-sm" />
                         </div>
                         <label class="card-text">Ingrese su email:</label><br>
                         <div class="form-group">
@@ -174,13 +167,13 @@
                 <div class="modal-body">
                     <h4>Escribe el nombre de la editorial</h4>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="editorial" id="editorial">
+                        <input type="text" class="form-control" name="editorial" id="editorial" required="required" >
                      </div>
                 </div>
                 <div class="modal-body">
                     <h4>Selecciona el pais</h4>
                     <div class="form-group">
-                        <select class="form-control" id="pais" name="pais" required="required">
+                        <select class="form-control" id="pais" name="pais" required="required" >
                              <option value="Alemania">Alemania</option>
                              <option value="Argentina">Argentina</option>
                              <option value="Australia">Australia</option>

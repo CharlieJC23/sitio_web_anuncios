@@ -15,7 +15,7 @@ $id=$_GET['id'];
          l.categoria=c.id and l.editorial=e.id AND l.idioma=i.id ";
          $consulta1=$mysqli->query($query);
          $fila=$consulta1->fetch_assoc();
-         $idlib=$fila['libreria'];
+         //CONSULTA DE LIBRERIA
          $querylibreria="SELECT li.libreria,ubicacion,direccionweb,numero,email 
          FROM libro l, libreria li WHERE li.id=l.libreria and l.id=$id";
          $consultalibreria=$mysqli->query($querylibreria);
@@ -27,10 +27,22 @@ $id=$_GET['id'];
     
 <div class="col-sm-10 central" style="width: auto; margin: auto auto;" >
     <div class="contenedor">
+<!--------------------------------------------Lado Izquierdo------------------------------------------------------->
         <div class="area1">
                 <img src="images/libros/<?php echo $fila['imagen'];?>" class="imgLibro" />
-            
+                <?php
+                if ($id==1) {
+                    //if (isset($_SESSION['FOO'])) { 
+                    ?>
+                    <input id="btn" type="submit"  value="Modificar" class="btn btn-success"  style=" 
+                    background-color: #dc3545; border-color=white;"/>
+                    <input id="btn" type="submit"  value="Eliminar" class="btn btn-success"  style="background-color: #dc3545;"/>
+                    <?php } else { ?>
+        <p>chau mundo</p> 
+    <?php } ?>
+
         </div>
+<!--------------------------------------------Centro--------------------------------------------------------------->
         <div class="area2">
             <h1><?php echo $fila['titulo'];?></h1>
             <hr>

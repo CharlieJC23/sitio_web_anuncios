@@ -12,6 +12,8 @@ $idioma=$_POST['idioma'];
 $libreria=$_POST['libreria'];
 $precio=$_POST['precio'];
 $descripcion=$_POST['des'];
+
+                   //   echo 'id de la editorial'.$editorial.'\nautor'.$autor.'\ncategoria'.$cat.'\nidioma'.$idioma;
 //------------------------------------------------------------codigo bien------------------------------------
 //para recibir la foto
 
@@ -71,7 +73,6 @@ $query="SELECT id FROM autor where nombre='$autor' and appaterno='$autorap'";
                       $consultalibro=$mysqli->query($querylibro);
                       $filal=$consultalibro->fetch_assoc();
                       $idl=$filal['id'];
-                      //echo 'id de la libreria'.$idl;
                       header('Location: ../librosDetalle.php?id='.$idl);
                     }else{
                         echo("Error description: con la imagen");

@@ -103,7 +103,7 @@
                          
                    </div> <br>
                 <center><input id="btn" type="submit"  value="Guardar" class="btn btn-success"  style="width: 330px; 
-                     height: 40px; margin: 0 auto;  justify-content: center;"/></center>
+                     height: 40px; margin: 0 auto;  justify-content: center; "/></center>
                         </form><br>
             </div>
         </div>
@@ -147,7 +147,7 @@
                     <!------------------------------------------------------------------------------------------>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" name="submitSave" class="btn btn-primary">Enviar</button>
+                    <button type="submit" name="submitSave" class="btn btn-primary">Aceptar</button>
                 </div>
             </form>
         </div>
@@ -197,7 +197,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" name="submitSave" class="btn btn-primary">Enviar</button>
+                    <button type="submit" name="submitSave" class="btn btn-primary">Aceptar</button>
                 </div>
             </form>
         </div>

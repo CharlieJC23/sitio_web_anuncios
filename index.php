@@ -73,7 +73,7 @@
                 </div>
                 <div class="carousel-item">
                     <a href="peliculas.php" target="_blank">
-                        <img src="./images/peliculas.png" class="mx-auto d-block">
+                        <img src="./images/peliculas.jpg" class="mx-auto d-block">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#demo" data-slide="prev">

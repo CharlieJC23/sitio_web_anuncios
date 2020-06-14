@@ -25,9 +25,9 @@
 						},
 						success: function(data) {
 							if (data) {
-								$("body").load("index.php").hide().fadeIn(1500).delay(6000);
+								$("body").load("menu_usuario.php").hide().fadeIn(1500).delay(6000);
 								//or
-								window.location.href = "index.php";
+								window.location.href = "menu_usuario.php";
 							} else {
 								$("#login").val('Login')
 								$("#error").html("<span style='color:#cc0000'>Error:</span> Contraseña o Usuario invalido. ");

@@ -5,60 +5,64 @@
 	<meta charset='utf-8'>
 	<meta htPage Titletp-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
 	<!--Validacion del FORMULARIO-->
-	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-	<script src="http://malsup.github.com/jquery.form.js"></script>
-	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script>
+		$(document).ready(function() {
 
-	<style>
-		body {
-			background: url(images/background-login.jpg) no-repeat center center fixed;
-			background-size: cover;
-		}
+			$('#login').click(function() {
+				var username = $("#username").val();
+				var password = $("#password").val();
+				var dataString = 'username=' + username + '&password=' + password;
+				if ($.trim(username).length > 0 && $.trim(password).length > 0) {
+					$.ajax({
+						type: "POST",
+						url: "ajaxLogin.php",
+						data: dataString,
+						cache: false,
+						beforeSend: function() {
+							$("#login").val('Conectando...');
+						},
+						success: function(data) {
+							if (data) {
+								$("body").load("index.php").hide().fadeIn(1500).delay(6000);
+								//or
+								window.location.href = "index.php";
+							} else {
+								$("#login").val('Login')
+								$("#error").html("<span style='color:#cc0000'>Error:</span> Contraseña o Usuario invalido. ");
+							}
+						}
+					});
 
-		.container {
-			margin: 0 auto;
-			margin-top: 15%;
-			margin-left: 30%;
-			margin-bottom: 25%;
-			padding: 0;
-			background-color: aqua;
-		}
-	</style>
+				}
+				return false;
+			});
+
+		});
+	</script>
+	<!--Termina Validacion del FORMULARIO-->
 </head>
 
 <body>
-	<div class="container" style="margin-right: 45%;">
-		<div class="contenedor_imagen">
-			<div>
-				<img src="images/usuario.jpg">
-			</div>
-			<form class="col-12" action="menu_usuario.php" method="post">
-				<div class="form-group">
-					<label for="inputUsuario" class="col-sm-2 control-label">Usuario</label>
-					<div class="col-12">
-						<input type="text" class="form-control" name="usuario" id="inputUsuario" placeholder="Usuario" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="inputPassword" class="col-sm-2 control-label">Password</label>
-					<div class="col-12">
-						<input type="password" class="form-control" name="password" id="inputPassword" placeholder="Contraseña" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-12">
-						<button type="submit" class="btn btn-default">Iniciar Sesion</button>
-					</div>
-					<div>
-						<a href="registro_usuario.php">Registrarse</a>
-					</div>
-				</div>
-			</form>
-		</div>
+	<!-- Comprueba si existe una sesion anteriormente-->
+	<?php
+	session_start();
+	if (!empty($_SESSION['login_user'])) {
+		header('Location: index.php');
+	}
+	?>
+	<div id="box">
+		<form action="" method="post">
+			Usuario
+			<input type="text" class="input" id="username" />
+			Contraseña
+			<input type="password" class="input" id="password" />
+			<input type="submit" class="button button-primary" value="Log In" id="login" />
+			<div id="error"></div>
+	</div>
+	</form>
 	</div>
 </body>
-<!--TERMINA FORMULARIO-->
-</body>
+
 </html>

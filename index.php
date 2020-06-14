@@ -40,7 +40,7 @@
                             <a class="nav-link" href="login_usuario.php" style="color: white;">INICIAR SESION</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="registrate.php" style="color: white;">REGISTRATE</a>
+                            <a class="nav-link" href="registro_usuario.php" style="color: white;">REGISTRATE</a>
                         </li>
                     </ul>
                 </nav>

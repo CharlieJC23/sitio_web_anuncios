@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title>Login</title>
+	<title>Registro</title>
 	<meta charset='utf-8'>
 	<meta htPage Titletp-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -10,18 +10,20 @@
 	<script>
 		$(document).ready(function() {
 
-			$('#login').click(function() {
+			$('#registro').click(function() {
 				var username = $("#username").val();
 				var password = $("#password").val();
+				var password2 = $("#password2").val();
 				var dataString = 'username=' + username + '&password=' + password;
-				if ($.trim(username).length > 0 && $.trim(password).length > 0) {
+				if ($.trim(username).length > 0 && $.trim(password).length > 0 && $.trim(password2).length > 0) {
+					if(password == password2){ //comprueba que las contraseñas coiincidan
 					$.ajax({
 						type: "POST",
-						url: "ajaxLogin.php",
+						url: "ajaxRegister.php",
 						data: dataString,
 						cache: false,
 						beforeSend: function() {
-							$("#login").val('Conectando...');
+							$("#registro").val('Validando...');
 						},
 						success: function(data) {
 							if (data) {
@@ -29,12 +31,15 @@
 								//or
 								window.location.href = "menu_usuario.php";
 							} else {
-								$("#login").val('Login')
-								$("#error").html("<span style='color:#cc0000'>Error:</span> Contraseña o Usuario invalido. ");
+								$("#registro").val('Registrarse')
+								$("#error").html("<span style='color:#cc0000'>Error:</span> El Usuario ya existe.");
 							}
 						}
-					});
-
+					});//termina el ajax
+					}//termina condicion de la contraseña
+					else{
+						alert("Las contraseñas no coinciden");
+					}
 				}
 				return false;
 			});
@@ -51,7 +56,9 @@
 			<input type="text" class="input" id="username" />
 			Contraseña
 			<input type="password" class="input" id="password" />
-			<input type="submit" class="button button-primary" value="Iniciar Sesion" id="login" />
+			Confirmar contraseña
+			<input type="password" class="input" id="password2" />
+			<input type="submit" class="button button-primary" value="Registrarse" id="registro" />
 			<div id="error"></div>
 	</div>
 	</form>

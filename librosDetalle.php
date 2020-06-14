@@ -36,15 +36,13 @@ $id=$_GET['id'];
         <div class="area1">
                 <img src="images/libros/<?php echo $fila['imagen'];?>" class="imgLibro" />
                 <?php
-                if ($id==1) {
+               // if ($id==1) {
                     //if (isset($_SESSION['FOO'])) { 
                     ?>
-                    <input id="btn" type="submit"  value="Modificar" class="btn btn-success"  style=" 
-                    background-color: #dc3545; border-color=white;"/>
-                    <input id="btn" type="submit"  value="Eliminar" class="btn btn-success"  style="background-color: #dc3545;"/>
-                    <?php } else { ?>
-        <p>chau mundo</p> 
-    <?php } ?>
+                    <a href="librosModificar.php?id=<?php echo $fila['id'];?>" class="boton1">Modificar</a>
+                    <a href="librosEliminar.php?id=<?php echo $fila['id'];?>" class="boton1">Eliminar</a><br>
+                    <?php //} else { ?>
+    <?php //} ?>
 
         </div>
 <!--------------------------------------------Centro--------------------------------------------------------------->
@@ -80,6 +78,16 @@ $id=$_GET['id'];
                       <td class="campotder"><?php echo $filalibreria['email'];?></td>
                   </tr>
               </table>
+              
+              <?php
+               // if ($id==1) {
+                    //if (isset($_SESSION['FOO'])) { 
+                    ?><!---
+                    <a href="librosModificar.php?id=<?php echo $fila['id'];?>" class="boton1">Modificar Libreria</a>
+                    <a href="librosEliminar.php?id=<?php echo $fila['id'];?>" class="boton1">Eliminar Libreria</a><br>
+                    -->
+                    <?php //} else { ?>
+    <?php //} ?>
         </div>
         <div class="area4">
             <table>

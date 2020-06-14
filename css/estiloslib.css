@@ -94,6 +94,14 @@
         .contenido span{
             color: crimson;
         }
+        .boton1{
+            background-color: crimson;
+            font-size: 1.1rem;
+            padding: .3rem .8rem;
+            width: 20px;
+            height: 5px;
+            color: white;
+        }
         .boton {
             background-color: crimson;
             color: white;

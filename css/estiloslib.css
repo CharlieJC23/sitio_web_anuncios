@@ -1,0 +1,167 @@
+.area1 { grid-area: menu; }
+        .area2 { grid-area: main; }
+        .area3 { grid-area: right; }
+        .area4 { grid-area: footer; }
+
+        .contenedor {
+            display: grid;
+            grid-template-areas: 
+            'menu main right'
+            'menu footer footer';
+            /*'menu main main main right right'
+            'menu footer footer footer footer footer';*/
+            grid-gap:  3px;
+            border: 0px ;
+            padding: 3px;
+        }
+        .contenedor > div{
+            
+            font-size:  30px;
+            /*background-color: #fff1ef;
+            text-align: center;
+            padding: 20px 0;*/
+
+        }
+        .autor{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #dc3545;
+        }
+        .descripcion{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: small;
+        }
+        tr.linea {
+            border-bottom: 1px dotted;
+        }
+        .area2{
+            width: 500px;
+        }
+        .area1{
+            width: 250px;
+        }
+        .area3{
+            padding: 0px 30px;
+            width: 400px;
+        }
+        .campotizq{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            color: #dc3545;
+        }
+        .campotder{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+        .textos{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #dc3545;
+            font-size: x-large;
+        }
+        .textoTer{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 150%;
+        }
+        .textoCua{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: x-large;
+        }
+        .imgLibro{
+            width: 180px ;
+            height: 280px ; 
+        }
+        .contenedorcar{
+        max-width: 1100px;
+        margin: 0 auto; /* centra todo*/
+        }
+        h2{
+            flex: 0 1 100%; /*se encoja el 100% del ancho de la pagina, beisis*/
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        .contenido{
+            background-color: white;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 1rem;
+        }
+        h3{
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.1rem;
+            font-family: arial, helvetica, roboto, "new times roman", lato;
+            font-weight: bold; 
+        }
+        .contenido span{
+            color: crimson;
+        }
+        .boton1{
+            background-color: crimson;
+            font-size: 1.1rem;
+            padding: .3rem .8rem;
+            width: 20px;
+            height: 5px;
+            color: white;
+        }
+        .boton {
+            background-color: crimson;
+            color: white;
+            padding: .3rem .8rem;
+            display: inline-block;
+            margin-top: 0.2rem;
+            text-decoration: none;
+        }
+        .imgPortada {
+         padding-top: 15px;
+        max-width: 100%;    
+        width: 150px;
+        height: 200px;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        .contenido-principal{
+            display: flex; /* se vean varias lineas*/
+            flex-wrap: wrap;
+        }
+        .entrada{
+            margin-bottom: 1rem;
+            border-style: solid;
+            border-color: rgb(235, 230, 230);
+            border-width: 1px; 
+        }
+        .exdiv {
+            border-style: solid;
+            border-color: rgb(235, 230, 230);
+            border-width: 1px; 
+            font-size: 1.25rem;
+            padding: .3rem .8rem;
+        }
+        /*
+        article{
+            margin: 10px;
+        }*/
+        @media screen and (min-width:480px){
+            .contenido-principal{
+                display: flex;
+                flex-wrap: wrap;
+                /*poner despues*/
+                justify-content: space-between;
+            }
+            /*poner despues*/
+            .entrada{
+                /*cada entrada ocupara el 50% del total del max-width*/         
+                       flex: 0 1 calc(50%);
+                /*poner despues*/
+                flex: 0 1 calc(50% - 1rem);
+                /*poner despues*/
+        
+            }
+        }
+        
+        /*poner despues*/
+        @media screen and (min-width:700px){
+            .entrada{
+                flex:0 1 calc(30% - 1rem);
+
+            }
+        }

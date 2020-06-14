@@ -17,6 +17,31 @@
     $consultaeditorial=$mysqli->query($queryeditorial);
     ?>
 </head>
+<script type="text/javascript">
+    //onblur="ValidarEditorial()";
+    function validarLibro(){
+        var titulo = document.getElementById('titulo').value;
+        if(titulo ==""){
+        $('#alertlib').html('Por favor, ingrese el titulo'.sliceDown(500));
+        $('#titulo').focus();
+        return false;
+    }else{
+        $('#alertlib').html('si funciina').sliceDown(300);
+        }
+    }
+    }
+    function validarEditorial(){
+    var editorial = document.getElementById('editorial').value;
+    var pais = document.getElementById('pais').value;
+    if(editorial ==""){
+        $('#alertlib').html('Por favor, ingrese el nombre de la editorial'.sliceDown(200));
+        $('#nombre').focus();
+        return false;
+    }else{
+        $('#alertlib').html('').sliceDown(300);
+        }
+    }
+    </script>
 <body>
     <!--Panel-->
     <div class="col-sm-6 central" style="width: auto; margin: auto auto;" >
@@ -28,7 +53,7 @@
                 <div class="form-row">
                     <div class="col">
                         <label class="card-text">Ingrese el titulo:</label><br>
-                        <input type="text" id="titulo" name="titulo" class="form-control form-control-sm" required="required" />
+                        <input type="text" id="titulo" name="titulo" class="form-control form-control-sm" required="required" value="onblur='javascript:validarLibro();'"/>
                <!-- <div id="mensaje1" class="errores"> Dato no valido</div>-->
                    </div>
                    <div class="col">
@@ -39,6 +64,7 @@
                                 <option value="<?php echo $fila['id'];?>"><?php echo $fila['editorial'];?></option>  
                             <?php }?>  
                         </select>
+                    <div id="alertlib">sd</div>
                     </div>
                </div>
                 <label class="card-text">Ingrese el autor: </label>
@@ -124,7 +150,7 @@
                 <div class="modal-body">
                     <label class="card-text">*Ingrese el nombre:</label><br>
                      <div class="form-group">
-                         <input type="text" id="nombre" name="nombre" class="form-control form-control-sm" required="required" />
+                         <input type="text" id="nombre" name="nombre" class="form-control form-control-sm" required="required"/>
                         </div>
                         <!--<div id="mensaje1" class="errores"> Dato no valido</div>-->
                         <label class="card-text">Ingrese la ubicacion: </label>
@@ -168,6 +194,7 @@
                     <h4>Escribe el nombre de la editorial</h4>
                     <div class="form-group">
                         <input type="text" class="form-control" name="editorial" id="editorial" required="required" >
+                        <div id="alertlib">sd</div>
                      </div>
                 </div>
                 <div class="modal-body">

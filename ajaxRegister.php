@@ -12,7 +12,7 @@ session_start();
 $username=mysqli_real_escape_string($db,$_POST['username']); 
 $password=mysqli_real_escape_string($db,$_POST['password']);
 
-$result=mysqli_query($db,"INSERT INTO usuarios(usuario,password,tipo_usuario) VALUES('$username','$password','admin'");
+$result=mysqli_query($db,"INSERT INTO usuarios(id_usuario,usuario,password,tipo_usuario) VALUES(null,'$username','$password','admin');");
 $count=mysqli_num_rows($result);
 $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 

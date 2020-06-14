@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title>Login usuarios con PHP y JQuery</title>
+	<title>Registro</title>
 	<meta charset='utf-8'>
 	<meta htPage Titletp-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -50,13 +50,6 @@
 </head>
 
 <body>
-	<!-- Comprueba si existe una sesion anteriormente-->
-	<?php
-	session_start();
-	if (!empty($_SESSION['login_user'])) {
-		header('Location: index.php');
-	}
-	?>
 	<div id="box">
 		<form action="" method="post">
 			Usuario

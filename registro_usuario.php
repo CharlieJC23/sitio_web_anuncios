@@ -42,17 +42,23 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="inputPassword" class="col-sm-2 control-label">Password</label>
+					<label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
 					<div class="col-12">
 						<input type="password" class="form-control" name="password" id="inputPassword" placeholder="Contraseña" required>
 					</div>
 				</div>
 				<div class="form-group">
+					<label for="inputPassword" class="col-sm-2 control-label">Confirmar Contraseña</label>
 					<div class="col-12">
-						<button type="submit" class="btn btn-default">Iniciar Sesion</button>
+						<input type="password" class="form-control" name="password2" id="inputPassword2" placeholder="Confirmar Contraseña" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-12">
+						<button type="submit" class="btn btn-default">Registrarse</button>
 					</div>
 					<div>
-						<a href="registro_usuario.php">Registrarse</a>
+						<a href="index.php">Cancelar</a>
 					</div>
 				</div>
 			</form>

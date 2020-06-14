@@ -49,7 +49,7 @@
     <!--Desde Aqui empieza el menu lateral -->
     <div id="menuopc">
             <div style="width: 200px; height: 400;" class="container">
-                <h4>Buscar Videojuegos por:</h4>
+                <h4>Genero:</h4>
                 <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action">Nombre</a>
                     <a href="#" class="list-group-item list-group-item-action">Plataforma</a>

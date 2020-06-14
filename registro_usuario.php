@@ -10,7 +10,7 @@
 	<script>
 		$(document).ready(function() {
 
-			$('#login').click(function() {
+			$('#registro').click(function() {
 				var username = $("#username").val();
 				var password = $("#password").val();
 				var password2 = $("#password2").val();
@@ -31,7 +31,7 @@
 								//or
 								window.location.href = "menu_usuario.php";
 							} else {
-								$("#registro").val('Registro')
+								$("#registro").val('Registrarse')
 								$("#error").html("<span style='color:#cc0000'>Error:</span> El Usuario ya existe.");
 							}
 						}

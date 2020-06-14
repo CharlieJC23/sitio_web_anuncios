@@ -40,7 +40,7 @@ $id=$_GET['id'];
                     //if (isset($_SESSION['FOO'])) { 
                     ?>
                     <a href="librosModificar.php?id=<?php echo $fila['id'];?>" class="boton1">Modificar</a>
-                    <a href="librosEliminar.php?id=<?php echo $fila['id'];?>" class="boton1">Eliminar</a><br>
+                    <a href="controllerLibros/eliminarLibro.php?id=<?php echo $fila['id'];?>" class="boton1">Eliminar</a><br>
                     <?php //} else { ?>
     <?php //} ?>
 

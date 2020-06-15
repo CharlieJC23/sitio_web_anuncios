@@ -31,8 +31,9 @@
 								//or
 								window.location.href = "menu_usuario.php";
 							} else {
-								$("#registro").val('Registrarse')
-								$("#error").html("<span style='color:#cc0000'>Error:</span> El Usuario ya existe.");
+								$("body").load("registrate.php").hide().fadeIn(1500).delay(6000);
+								//or
+								window.location.href = "registrate.php";
 							}
 						}
 					});//termina el ajax

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
     <meta charset='utf-8'>
     <meta htPage Titletp-equiv='X-UA-Compatible' content='IE=edge'>
@@ -48,13 +47,8 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">LIBROS</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Alta</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Baja</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Consulta</a>
+                            <a class="nav-link" href="libros.php" style="color: white;">LIBROS</a>
+                            <div class="">
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -74,8 +68,6 @@
                 </nav>
         </header>
     </div>
-
-
 
     <footer style="background-color: black;" class="page-footer font-small mdb-color  lighten-3 pt-4">
         <div class="container text-center text-md-left">

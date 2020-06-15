@@ -1,43 +1,48 @@
 function mostrarDatos() {
     $.ajax({
-        url: "./mostrarDatos.php",
+        url: "mostrarDatos.php",
         success: function (r) {
             $('#tablaDatos').html(r);
         }
     });
 }
 
-function agregarDatos(_idNombre) {
+function agregarDatos() {
+
+    if ($('#año').val() == "") {
+        swal("Camara joto");
+        return false;
+    }
     $.ajax({
         type: "POST",
-        data: $('#agregarDatos').serialize(),
+        data: $('#frmAgregarDatos'),
         url: "agregarDatos.php",
         success: function (r) {
             console.log(r);
             if (r == 1) {
-                swal("Agregado con exito...");
+                swal("Exito al insertar");
             } else {
-                swal("Verifique los datos, no se pudo agregar...");
+                swal("Fallo al insertar");
             }
         }
     });
 }
-function eliminarDatos() {
+
+function eliminarDatos(idNombre) {
     swal({
-        title: "¿Seguro que desea eliminar este dato?",
-        text: "Una vez eliminado ya no se podra recuperar!!!",
+        title: "Estas seguro de eliminar este registro?",
+        text: "Una vez que elimines este registro, no podra ser recuperado!!!",
         icon: "warning",
         buttons: true,
         dangerMode: true,
     })
         .then((willDelete) => {
             if (willDelete) {
-                swal("El registro ha sido eliminado correctamente!!!", {
+                swal("Poof! Your imaginary file has been deleted!", {
                     icon: "success",
                 });
             } else {
-                swal("Verifica bien tus datos antes de eliminar");
+                swal("Your imaginary file is safe!");
             }
         });
 }
-

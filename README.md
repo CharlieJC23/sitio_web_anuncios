@@ -4,6 +4,7 @@ Proyecto para la materia de Programación web del Instituto Tecnológico de Tolu
 Elaborado por:
 
 -Bazán Becerril Leonardo Yael
+-Cruz Hernández Claudia Itzel 
+-Garcia Jimenez Jose Anotnio 
 -Rivera Regis José Carlos
--Jose Anotnio Garcia Jimenez
 -Sánchez Pavón Javier

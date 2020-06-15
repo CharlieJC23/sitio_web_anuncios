@@ -15,7 +15,7 @@
                             <a class="nav-link" href="series.php" style="color: white;">SERIES</a>
                         </li>
                         <li class="nav-item dropdown">
-                          <a style="color: white; class="nav-link dropdown-toggle" href="libros.php" id="navbardrop" data-toggle="dropdown">LIBROS</a>
+                          <a style="color: white;" class="nav-link dropdown-toggle" href="libros.php" id="navbardrop" data-toggle="dropdown">LIBROS</a>
                           <div class="dropdown-menu">
                           <a class="dropdown-item" href="Crear.php">AgregarLibro</a>
                           </div>

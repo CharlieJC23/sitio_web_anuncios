@@ -10,7 +10,7 @@ $tabla = "";
 
 while ($datos = $result->fetch_assoc()) {
     $tabla = $tabla . '<tr>
-                        <td>' . $datos['titulo_id'] . '</td>
+                        <td>' . $datos['id'] . '</td>
                         <td>' . $datos['año_lanzamiento'] . '</td>
                         <td>' . $datos['genero'] . '</td>
                         <td>' . $datos['autor'] . '</td>
@@ -20,7 +20,7 @@ while ($datos = $result->fetch_assoc()) {
                             <span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#actualizar"><i class="fa fa-edit"></i></span>
                         </td>
                         <td>
-                            <span class="btn btn-danger btn-sm" onclick="eliminarDatos()"><i class="fa fa-trash"></i></span>
+                            <span class="btn btn-danger btn-sm" onclick="eliminarDatos(' . $datos['id'] . ')"><i class="fa fa-trash"></i></span>
                         </td>
                     </tr>';
 }
@@ -35,7 +35,9 @@ echo '<table class="table table-stripped">
             <th>Autor</th>
             <th>Nombre de la Serie</th>
             <th>Plataforma</th>
-        </thead>
-        <tbody>
+            <th>Editar</th>
+            <th>Eliminar</th>
+            </thead>
+            <tbody>
             ' . $tabla . '
         </tbody>';

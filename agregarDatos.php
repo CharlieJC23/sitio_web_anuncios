@@ -14,7 +14,7 @@ $datos = array(
     $conexion->real_escape_string($_POST['plataform'])
 );
 
-$sql = "INSERT INTO series ('titulo_id', 'año_lanzamiento', 'genero', 'autor', 'nombre_serie', 'plataforma') VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO series ('id', 'año_lanzamiento', 'genero', 'autor', 'nombre_serie', 'plataforma') VALUES (?, ?, ?, ?, ?, ?)";
 
 $query = $conexion->prepare($sql);
 

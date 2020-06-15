@@ -49,13 +49,8 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">LIBROS</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Alta</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Baja</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Consulta</a>
+                            <a class="nav-link" href="libros.php" style="color: white;">LIBROS</a>
+                            <div class="">
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -75,7 +70,6 @@
                 </nav>
         </header>
     </div>
-
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -92,7 +86,6 @@
                                     </span>
                                 </section>
                                 <div id="tablaDatos">
-
                                 </div>
                             </div>
                         </div>
@@ -104,7 +97,8 @@
             </div>
         </div>
     </div>
-
+      <!--Modal para insertar -->
+        <!---->
     <div class="modal fade" id="insertar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -132,12 +126,12 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" id="btnGuardar"onclick="agregarDatos()">Agregar</button>
+                    <button type="button" class="btn btn-primary" id="btnGuardar" onclick="agregarDatos()">Agregar</button>
                 </div>
             </div>
         </div>
     </div>
-
+    <!--Modal para modificar -->
     <div class="modal fade" id="actualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -170,7 +164,6 @@
             </div>
         </div>
     </div>
-
     <footer style="background-color: black;" class="page-footer font-small mdb-color  lighten-3 pt-4">
         <div class="container text-center text-md-left">
             <div class="row">
@@ -185,7 +178,6 @@
                 <hr class="clearfix w-100 d-md-none">
                 <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
                     <h5 style="color: white;" class="font-weight-bold text-uppercase mb-4">ACERCA DE</h5>
-
                     <ul class="list-unstyled">
                         <li>
                             <p style="color: white;">Dirección: <br> Toluca, EDO MX 50260, MX</p>
@@ -204,7 +196,6 @@
             </div>
         </div>
     </footer>
-
     <script type="text/javascript">
         $(document).ready(function() {
             mostrarDatos();

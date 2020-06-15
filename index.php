@@ -25,7 +25,7 @@
                             <a class="nav-link" href="videojuegos.php" style="color: white;">VIDEOJUEGOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="restaurantes.php" style="color: white;">COMIDA</a>
+                            <a class="nav-link" href="#" style="color: white;">COMIDA</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="series.php" style="color: white;">SERIES</a>

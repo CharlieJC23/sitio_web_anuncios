@@ -12,7 +12,7 @@
     //  $id=$_GET['id'];
     //}
     //conexion a la base de datos
-    include('configlibros/db_connect.php');
+    include('database.php');
     //mostrar generos    
     $query = "SELECT id,categoria FROM categoria";
     $consultaGen = $mysqli->query($query);

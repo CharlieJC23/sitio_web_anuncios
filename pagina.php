@@ -2,7 +2,7 @@
 <html>
 <head>
     
-    <?php include('templates/header.php'); ?>
+    <?php include('templates/head.php'); ?>
 <link href="https://fonts.googleapis.com/css?family=Libre+Backerville:400,700" rel="stylesheet" type="text/css">
 </head>
 <body>

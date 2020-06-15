@@ -1,11 +1,18 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-	<title>Registro</title>
 	<meta charset='utf-8'>
 	<meta htPage Titletp-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>Registro</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 	<!--Validacion del FORMULARIO-->
 	<script>
 		$(document).ready(function() {
@@ -16,54 +23,63 @@
 				var password2 = $("#password2").val();
 				var dataString = 'username=' + username + '&password=' + password;
 				if ($.trim(username).length > 0 && $.trim(password).length > 0 && $.trim(password2).length > 0) {
-					if(password == password2){ //comprueba que las contraseñas coiincidan
-					$.ajax({
-						type: "POST",
-						url: "ajaxRegister.php",
-						data: dataString,
-						cache: false,
-						beforeSend: function() {
-							$("#registro").val('Validando...');
-						},
-						success: function(data) {
-							if (data) {
-								$("body").load("menu_usuario.php").hide().fadeIn(1500).delay(6000);
-								//or
-								window.location.href = "menu_usuario.php";
-							} else {
-								$("body").load("registrate.php").hide().fadeIn(1500).delay(6000);
-								//or
-								window.location.href = "registrate.php";
+					if (password == password2) { //comprueba que las contraseñas coiincidan
+						$.ajax({
+							type: "POST",
+							url: "ajaxRegister.php",
+							data: dataString,
+							cache: false,
+							beforeSend: function() {
+								$("#registro").val('Validando...');
+							},
+							success: function(data) {
+								if (data) {
+									$("body").load("menu_usuario.php").hide().fadeIn(1500).delay(6000);
+									//or
+									window.location.href = "menu_usuario.php";
+								} else {
+									swal("Usuario ya existente");
+									window.location.href = "registrate.php";
+								}
 							}
-						}
-					});//termina el ajax
-					}//termina condicion de la contraseña
-					else{
-						alert("Las contraseñas no coinciden");
+						}); //termina el ajax
+					} //termina condicion de la contraseña
+					else {
+						swal("Las contraseñas no coinciden");
 					}
 				}
 				return false;
 			});
-
 		});
 	</script>
 	<!--Termina Validacion del FORMULARIO-->
 </head>
 
-<body>
-	<div id="box">
-		<form action="" method="post">
-			Usuario
-			<input type="text" class="input" id="username" />
-			Contraseña
-			<input type="password" class="input" id="password" />
-			Confirmar contraseña
-			<input type="password" class="input" id="password2" />
-			<input type="submit" class="button button-primary" value="Registrarse" id="registro" />
-			<div id="error"></div>
-	</div>
-	</form>
+<body class="container" style="background-color: lightgrey;">
+	<div class="modal-dialog text-center">
+		<div class="col-sm-12">
+			<div class="modal-content">
+				<form class="col-12" action="" method="post">
+					<div class="form-group" id="user-group">
+						<strong>Usuario</strong>
+						<input type="text" class="form-control" placeholder="Nombre de usuario" name="username" id="username" />
+					</div>
+					<div class="form-group" id="contrasena-group">
+						<strong>Contraseña</strong>
+						<input type="password" class="form-control" placeholder="Contrasena" name="password" id="password" />
+					</div>
+					<div class="form-group" id="contrasena-group">
+						<strong>Confirmar Contraseña</strong>
+						<input type="password" class="form-control" placeholder="Contrasena" name="password2" id="password2" />
+					</div>
+					<button type="submit" class="btn btn-primary" id="registro"><i class="fas fa-sign-in-alt"></i> Ingresar </button>
+					<div id="error"></div>
+					Ingresa <a href="login_usuario.php">Aqui</a>
+				</form>
+			</div>
+		</div>
 	</div>
 </body>
+
 
 </html>

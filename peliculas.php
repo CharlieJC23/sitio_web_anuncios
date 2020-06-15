@@ -45,6 +45,22 @@
                     </ul>
                 </nav>
         </header>
+     <div id="menuopc">
+            <div style="height: auto; width: fit-content; display:inline-flexbox" class="container">
+                <h3  style="text-align: center;">Peliculas Disponibles:</h3>
+                <div class="list-group">
+                    <a href="../sitio_web_anuncios-master/Peliculas/CRUD/read2.php "class="list-group-item active">Catalogo Peliculas</a>
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+
+
     </div>
 
     <footer style="background-color: black;" class="page-footer font-small mdb-color  lighten-3 pt-4">

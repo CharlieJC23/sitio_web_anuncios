@@ -7,6 +7,6 @@ function conexion()
         echo "Fallo al conectar con la bd..." . $conexion->connect_error;
     }
 
- 
+    $conexion->set_charset("utf8");
     return $conexion;
 }

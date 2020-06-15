@@ -7,11 +7,11 @@ function mostrarDatos() {
     });
 }
 
-function agregarDatos(idNombre) {
+function agregarDatos(_idNombre) {
     $.ajax({
         type: "POST",
         data: $('#agregarDatos').serialize(),
-        url: "./agregarDatos.php",
+        url: "agregarDatos.php",
         success: function (r) {
             console.log(r);
             if (r == 1) {

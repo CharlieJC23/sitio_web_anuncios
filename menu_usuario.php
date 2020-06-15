@@ -22,14 +22,7 @@
                     <a href="menu_usuario.php"><img src="./images/logo.png" height="80px" /></a>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">VIDEOJUEGOS</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Alta</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Baja</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Consulta</a>
-                            </div>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="videojuegos_usuario.php" style="color: white;">VIDEOJUEGOS</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">COMIDA</a>

@@ -15,12 +15,10 @@ $password=mysqli_real_escape_string($db,$_POST['password']);
 $result=mysqli_query($db,"INSERT INTO usuarios(id_usuario,usuario,password,tipo_usuario) VALUES(null,'$username','$password','admin');");
 $count=mysqli_num_rows($result);
 $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-
 // If result matched $username and $password, table row  must be 1 row
-if($count==1)
-{
+    if($count==1){
 $_SESSION['login_user']=$row['usuario']; //Storing user session value.
 echo $row['usuario'];
-}
+    }
 }
 ?>

@@ -138,11 +138,9 @@
         }
         #alertlib{
             color: rgb(223, 23, 23);
-            background: #f2b2a2;
-            border: 1px solid rgb(223, 23, 23);
-            padding: 4px 8px;
-            border-radius: 3px;
-        }
+            background-color: #f2b2a2;
+            padding: 4px ;
+             }
         /*
         article{
             margin: 10px;

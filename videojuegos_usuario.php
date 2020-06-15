@@ -12,12 +12,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
-
-    <style>
-        .menuopc{
-            align-self: 0 auto;
-        }
-    </style>
 </head>
 
 <body>
@@ -53,17 +47,16 @@
         </header>
     </div>
     <!--Desde Aqui empieza el menu lateral -->
-    <div id="menuopc">
-            <div class="container">
-                <h4>Buscar Videojuegos por:</h4>
-                <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Nombre</a>
-                    <a href="#" class="list-group-item list-group-item-action">Plataforma</a>
-                    <a href="#" class="list-group-item list-group-item-action">Genero</a>         
-                </div>
-            </div>
-        </div>
-        <!-- Termina el menu lateral -->
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">Genrero</a></li>
+            <li><a href="#">JavaScript</a></li>
+        </ul>
+    </div>
+    <!-- Termina el menu lateral -->
 </body>
 
 <footer style="background-color: black;" class="page-footer font-small mdb-color  lighten-3 pt-4">

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -48,17 +47,16 @@
         </header>
     </div>
     <!--Desde Aqui empieza el menu lateral -->
-    <div id="menuopc">
-            <div style="width: 200px; height: 400;" class="container">
-                <h4>Buscar Videojuegos por:</h4>
-                <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Nombre</a>
-                    <a href="#" class="list-group-item list-group-item-action">Plataforma</a>
-                    <a href="#" class="list-group-item list-group-item-action">Genero</a>         
-                </div>
-            </div>
-        </div>
-        <!-- Termina el menu lateral -->
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">Genrero</a></li>
+            <li><a href="#">JavaScript</a></li>
+        </ul>
+    </div>
+    <!-- Termina el menu lateral -->
 </body>
 
 <footer style="background-color: black;" class="page-footer font-small mdb-color  lighten-3 pt-4">

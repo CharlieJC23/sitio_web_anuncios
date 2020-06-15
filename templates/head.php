@@ -12,5 +12,6 @@
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <!--<script type="text/javascript" src="resources/js/validacioneslibro.js"></script>-->
     <link rel="stylesheet" type="text/css" href="css/estiloslib.css">
+    <script src="resources/js/validacioneslibros.js"></script> 
     
 </head>

@@ -4,58 +4,58 @@
     
     <?php include('templates/nav.php'); ?>
  <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
+ <script src="resources/js/validacioneslibros.js"></script> 
+ 
+ ?>
 </head> 
 <body> 
-<script>
-var namePattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g;
-var emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$";
-function checkInput(idInput, pattern) {
-	return $(idInput).val().match(pattern) ? true : false;
-}
-
-function checkTextarea(idText) {
-	return $(idText).val().length > 12 ? true : false;	
-}
-
-function checkRadioBox(nameRadioBox) {
-  return $(nameRadioBox).is(":checked") ? true : false;
-}
-
-function checkSelect(idSelect) {
-	return $(idSelect).val() ? true : false;
-}
-
-function enableSubmit (idForm) {
-	$(idForm + " button.submit").removeAttr("disabled");
-}
-
-function disableSubmit (idForm) {
-	$(idForm + " button.submit").attr("disabled", "disabled");
-}
-
-function checkForm (idForm) {
-	$(idForm + " *").on("change keydown", function() {
-		if (checkInput("#editorial", namePattern) && /*
-			checkInput("#apellidos", namePattern) && 
-      checkInput("#email", emailPattern) && */
-			checkSelect("#pais") /*&& 
-			checkTextarea("#comentario") && 
-			checkRadioBox("#legal") &&
-      checkRadioBox("[name=boletin]")*/)
-		{
-			enableSubmit(idForm);
-		} else {
-			disableSubmit(idForm);
-		}
-	});
-}
-
-$(function() {
-	checkForm("idf");
-});
-</script>
-
-<form action="controllerLibros/agregar" name="idf" id="idf" method="post">
+<button type="button"  data-toggle="modal" data-target="#exampleModal" >Libreria</button><br>
+<!-- Modal  para agregar libreria --------------------------------------------------------------------------------------->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+                    <!-----------------------------------------FORMULARIO------------------------------------------------->
+            <form action="controllerLibros/agregarLibreria" method="post" id="formLibreria">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Libreria</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--INICIO CUESTIONARIO------------------------------------------------------------------->
+                <div class="modal-body">
+                    <label class="card-text">*Ingrese el nombre:</label><br>
+                     <div class="form-group">
+                         <input type="text" id="nombre" name="nombre" class="form-control form-control-sm" required="required" onBlur="validateInputR(this);"/>
+                        </div>
+                        <!--<div id="mensaje1" class="errores"> Dato no valido</div>-->
+                        <label class="card-text">Ingrese la ubicacion: </label>
+                        <div class="form-group">
+                            <input type="text" id="ubicacion" name="ubicacion"  class="form-control form-control-sm" />
+                        </div>
+                        <label class="card-text">Ingrese su pagina web (en caso de tener):</label><br>
+                        <div class="form-group">
+                            <input type="url" id="pagina" name="pagina" class="form-control form-control-sm" onBlur="validateInputUrl(this);" />
+                        </div>
+                        <label class="card-text">Ingrese el numero telefonico:</label><br>
+                        <div class="form-group">
+                            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" id="tel" name="tel" class="form-control form-control-sm" />
+                        </div>
+                        <label class="card-text">Ingrese su email:</label><br>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control form-control-sm" onBlur="validateInputEmail(this);"/>
+                        </div>
+                </div>
+                    <!------------------------------------------------------------------------------------------>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" name="submitSave" class="btn btn-primary">Aceptar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<form action="controllerLibros/agregar" name="idf" id="formEditorial" method="post" onBlur="ValidarClicSubmit(this)">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Agregar Editorial</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -65,14 +65,16 @@ $(function() {
                 <div class="modal-body">
                     <h4>Escribe el nombre de la editorial</h4>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="editorial" id="editorial" required="required" >
-                        <div id="alertlib">sd</div>
+                        <input type="text" class="form-control" name="editorial" id="editorial" 
+                        required="required" onBlur="validateInputR(this);" >
+                        
                      </div>
                 </div>
                 <div class="modal-body">
                     <h4>Selecciona el pais</h4>
                     <div class="form-group">
-                        <select class="form-control" id="pais" name="pais" required="required" >
+                        <select class="form-control" id="pais" name="pais" required="required" onBlur="validarSelect(this)">
+                        <option value="">------</option>
                              <option value="Alemania">Alemania</option>
                              <option value="Argentina">Argentina</option>
                              <option value="Australia">Australia</option>
@@ -94,9 +96,10 @@ $(function() {
            </select>
                      </div>
                 </div>
+                </div><div class="form-row"><div id="alertlib" style="display: none">FALTA ALGO</div></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" >Cerrar</button>
-                    <button type="submit" name="submitSave" class="btn btn-primary" disabled>Aceptar</button>
+                    <button type="submit" name="submitSave" class="btn btn-primary" id="btn">Aceptar</button>
                 </div>
             </form>
 </body> 

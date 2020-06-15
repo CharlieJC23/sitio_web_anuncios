@@ -15,6 +15,7 @@
     $consultalibreria=$mysqli->query($querylibreria);
     $queryeditorial="SELECT id,editorial FROM editorial";
     $consultaeditorial=$mysqli->query($queryeditorial);
+    //
     ?>
 </head>
 <script type="text/javascript">
@@ -29,7 +30,7 @@
         $('#alertlib').html('si funciina').sliceDown(300);
         }
     }
-    }
+    
     function validarEditorial(){
     var editorial = document.getElementById('editorial').value;
     var pais = document.getElementById('pais').value;
@@ -53,13 +54,13 @@
                 <div class="form-row">
                     <div class="col">
                         <label class="card-text">Ingrese el titulo:</label><br>
-                        <input type="text" id="titulo" name="titulo" class="form-control form-control-sm" required="required" value="onblur='javascript:validarLibro();'"/>
+                        <input type="text" id="titulo" name="titulo" class="form-control form-control-sm" required="required" onBlur="validateInputR(this);"/>
                <!-- <div id="mensaje1" class="errores"> Dato no valido</div>-->
                    </div>
                    <div class="col">
                         <label class="card-text">Ingrese la editorial:</label><br>
-                        <select class="form-control" id="editorial" name="editorial" required="required">
-                        <option data-toggle="modal" data-target="#exampleModal2">Agregar Editorial</option>
+                        <select class="form-control" id="editorial" name="editorial" required="required" onBlur="validarSelect(this)">
+                        <option value="" data-toggle="modal" data-target="#exampleModal2">Agregar Editorial</option>
                         <?php while($fila=$consultaeditorial->fetch_assoc()){?>
                                 <option value="<?php echo $fila['id'];?>"><?php echo $fila['editorial'];?></option>  
                             <?php }?>  
@@ -70,19 +71,20 @@
                 <label class="card-text">Ingrese el autor: </label>
                 <div class="form-row">
                     <div class="col">
-                        <input type="text" class="form-control" id="autor" name="autor" placeholder="Nombre" required="required">
+                        <input type="text" class="form-control" id="autor" name="autor" placeholder="Nombre" required="required" onBlur="validateInputR(this);">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" id="autorap" name="autorap" placeholder="Apellido Paterno" required="required">
+                        <input type="text" class="form-control" id="autorap" name="autorap" placeholder="Apellido Paterno" required="required" onBlur="validateInputR(this);">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" id="autoram" name="autoram" placeholder="Apellido Materno" >
+                        <input type="text" class="form-control" id="autoram" name="autoram" placeholder="Apellido Materno" onBlur="validateInputR(this);">
                     </div>
                 </div><br>
                 <div class="form-row">
                     <div class="col">
                         <label class="card-text">Ingrese la categoria:</label><br>
-                        <select class="form-control" id="cat" name="cat" required="required">
+                        <select class="form-control" id="cat" name="cat" required="required" onBlur="validarSelect(this)">
+                        <option value="">------</option>
                         <?php while($fila=$consultaCat->fetch_assoc()){?>
                             <option value="<?php echo $fila['id'];?>"><?php echo $fila['categoria'];?></option>  
                             <?php }?>
@@ -91,13 +93,14 @@
                     </div>  
                     <div class="col">
                         <label class="card-text">Ingrese el año en que fue publicado:</label><br>
-                        <input type="number" id="fecha" name="fecha" class="form-control form-control-sm"/><br>
+                        <input type="number" id="fecha" name="fecha" class="form-control form-control-sm"onBlur="validateAnn(this)"><br>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col">
                         <label class="card-text">Ingrese el idioma del libro:</label><br>
-                        <select class="form-control" id="idioma" name="idioma" required="required">
+                        <select class="form-control" id="idioma" name="idioma" required="required" onBlur="validarSelect(this)">
+                        <option value="">------</option>
                             <?php while($fila=$consultaidioma->fetch_assoc()){?>
                                 <option value="<?php echo $fila['id'];?>"><?php echo $fila['idioma'];?></option>  
                             <?php }?> 
@@ -105,8 +108,8 @@
                     </div>
                     <div class="col">
                         <label class="card-text">Ingrese la libreria :</label><br>
-                        <select class="form-control" id="libreria" name="libreria" required="required">
-                        <option data-toggle="modal" data-target="#exampleModal">Agregar libreria</option>
+                        <select class="form-control" id="libreria" name="libreria" required="required" onBlur="validarSelect(this)">
+                        <option data-toggle="modal" data-target="#exampleModal" value="">Agregar libreria</option>
                         <?php while($fila=$consultalibreria->fetch_assoc()){?>
                                 <option value="<?php echo $fila['id'];?>"><?php echo $fila['libreria'];?></option>  
                             <?php }?>  
@@ -129,7 +132,7 @@
                          
                    </div> <br>
                 <center><input id="btn" type="submit"  value="Guardar" class="btn btn-success"  style="width: 330px; 
-                     height: 40px; margin: 0 auto;  justify-content: center; "/></center>
+                     height: 40px; margin: 0 auto;  justify-content: center; " disabled='true'/></center>
                         </form><br>
             </div>
         </div>
@@ -224,7 +227,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" name="submitSave" class="btn btn-primary">Aceptar</button>
+                    <button type="submit" name="submitSave" class="btn btn-primary" id="btn">Aceptar</button>
                 </div>
             </form>
         </div>

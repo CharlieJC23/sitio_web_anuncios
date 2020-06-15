@@ -1,0 +1,22 @@
+.barraMenu
+{
+    width: 100%;
+    height: 60px;
+
+    position: sticky;
+    top: 0px;
+
+    background-color: #ff5757;
+}
+
+.btn
+{
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: #ff5757;
+}
+
+.logo
+{
+    text-align: center;
+}

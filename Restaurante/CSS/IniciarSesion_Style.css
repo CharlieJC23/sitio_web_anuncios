@@ -1,0 +1,48 @@
+.barraMenu
+{
+    width: 100%;
+    height: 60px;
+
+    background-color: #ff5757;
+}
+
+.barraMenu>.btn
+{
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: #ff5757;
+}
+
+.card
+{
+    margin-top: 10px;
+}
+
+input[type=text]
+{
+    text-align: center;
+    margin: 1px;
+}
+
+
+input[type=password]
+{
+    text-align: center;
+    margin: 1px;
+}
+
+#read
+{
+    margin-top: 10px;
+
+    color: white;
+    background-color: #ff5757;
+}
+
+#read:hover
+{
+    margin-top: 10px;
+
+    color: black;
+    background-color: #ff5757;
+}

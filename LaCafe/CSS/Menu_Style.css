@@ -1,0 +1,69 @@
+.barraMenu
+{
+    width: 100%;
+    height: 60px;
+
+
+    background-color: #ff5757;
+}
+
+.barraMenu>.btn
+{
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: #ff5757;
+}
+
+.dropdown
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dropdown>.btn 
+{
+    width: 100%;
+}
+
+.dropdown-menu
+{
+    width: 99%;
+}
+
+.card
+{
+    margin-top: 20px;
+}
+
+.col-md-8
+{
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.encabezado
+{
+    text-align: center;
+}
+
+input[type=text]
+{
+    text-align: center;
+    margin: 1px;
+}
+
+#create
+{
+    margin-top: 10px;
+
+    color: white;
+    background-color: blueviolet;
+}
+
+#create:hover
+{
+    margin-top: 10px;
+
+    color: black;
+    background-color: #ff5757;
+}

@@ -6,12 +6,33 @@
     <meta htPage Titletp-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Pagina Principal</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <conexion$conexion rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <conexion$conexion rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <conexion$conexion rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <style type="text/css">
+        .wrapper {
+            width: 650px;
+            margin: 0 auto;
+        }
+
+        .page-header h2 {
+            margin-top: 0;
+        }
+
+        table tr td:last-child a {
+            margin-right: 15px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</head>
 </head>
 
 <body>
@@ -22,107 +43,82 @@
                     <a href="index.php"><img src="./images/logo.png" height="80px" /></a>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="videojuegos.php" style="color: white;">VIDEOJUEGOS</a>
+                            <a class="nav-conexion$conexion" href="videojuegos.php" style="color: white;">VIDEOJUEGOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="restaurantes.php" style="color: white;">COMIDA</a>
+                            <a class="nav-conexion$conexion" href="restaurantes.php" style="color: white;">COMIDA</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="series.php" style="color: white;">SERIES</a>
+                            <a class="nav-conexion$conexion" href="series.php" style="color: white;">SERIES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="libros.php" style="color: white;">LIBROS</a>
+                            <a class="nav-conexion$conexion" href="libros.php" style="color: white;">LIBROS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="peliculas.php" style="color: white;">PELICULAS</a>
+                            <a class="nav-conexion$conexion" href="peliculas.php" style="color: white;">PELICULAS</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login_usuario.php" style="color: white;">INICIAR SESION</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="registrate.php" style="color: white;">REGISTRATE</a>
+                        <li class="nav-item right-text">
+                            <a class="nav-conexion$conexion" href="logout.php" style="color: white;">CERRAR SESION</a>
                         </li>
                     </ul>
                 </nav>
         </header>
         <!--Inicia el contenedor de las imagenes y el menu -->
-        <div id="menuopc">
-            <div class="container">
+        <div class="wrapper">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-2">
-                        <!--Menu lateral-->
-                        <h4>Rivera Regis Jose Carlos - Modulo de videojuegos, vista de los videojuegos disponibles</h4>
-                        <h5>Videojuegos:</h5>
-                        <div class="list-group justify-content: flex-start">
-                            <a href="#" class="list-group-item list-group-item-action">Nombre</a>
-                            <a href="#" class="list-group-item list-group-item-action">Plataforma</a>
-                            <a href="#" class="list-group-item list-group-item-action">Genero</a>
+                    <div class="col-md-12">
+                        <div class="page-header clearfix">
+                            <h2 class="pull-left">Detalles de los videojuegos</h2>
+                            <a href="agregar_juego.php" class="btn btn-success pull-right">Agregar un nuevo juego</a>
                         </div>
-                    </div><!--Termina el menu lateral -->
-                    <div class="col-10">
-                        <div id="card-list" class="row h-100 justify-content-center">
-                         <!--Cuadrcula para las imagenes -->   
-                        <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/videojuegos/bloodborne-ps.jpg" style="height: 15rem;" alt="bloodborne">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">BloodBorne-PS4</h6>
-                                    <button href="#" class="btn btn-success">Comprar</button>
-                                </div>
-                            </div>
-                            <!--Cada imagen es separada por este div -->
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/videojuegos/crisis2-pc.png" style="height: 15rem;" alt="crisis2">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">Crisis2-PC</h6>
-                                    <button href="#" class="btn btn-success">Comprar</button>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/videojuegos/deadcells-nintendo.png" style="height: 15rem;" alt="DeadCells">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">Dead Cells-Nintendo</h6>
-                                    <button href="#" class="btn btn-success">Comprar</button>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/videojuegos/destiny-xbox.jpg" style="height: 15rem;" alt="Destiny">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">Destiny-XBOX</h6>
-                                    <button href="#" class="btn btn-success">Comprar</button>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/videojuegos/frostpunk-pc.jpg" style="height: 15rem;" alt="frostpunk">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">Frost Punk-PC</h6>
-                                    <button href="#" class="btn btn-success">Comprar</button>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/videojuegos/injustice-xbox.jpg" style="height: 15rem;" alt="injustice">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">Injustice</h6>
-                                    <button href="#" class="btn btn-success">Comprar</button>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/videojuegos/justcause-xbox.jpg" style="height: 15rem;" alt="justcause">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">Just Cause-XBOX</h6>
-                                    <button href="#" class="btn btn-success">Comprar</button>
-                                </div>
-                            </div>
-                            <div class="card m-3" style="width:170px;">
-                                <img class="card-img-top w-auto" src="./images/videojuegos/massefect-pc.jpg" style="height: 15rem;" alt="massefect">
-                                <div class="card-body">
-                                    <h6 class="card-title" style="font-family: Century Gothic;">Mass Efect-PC</h6>
-                                    <button href="#" class="btn btn-success">Comprar</button>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        // Primero se incluye la coxion a la bd
+                        require_once "database.php";
+
+                        // Consulta a la bd para revisar si esta vacia
+                        $sql = "SELECT * FROM juegos";
+                        if ($result = mysqli_query($conexion, $sql)) {
+                            if (mysqli_num_rows($result) > 0) {
+                                echo "<table class='table table-bordered table-striped'>";
+                                echo "<thead>";
+                                echo "<tr>";
+                                echo "<th>id</th>";
+                                echo "<th>NombreJuego</th>";
+                                echo "<th>Plataforma</th>";
+                                echo "<th>Acciones</th>";
+                                echo "</tr>";
+                                echo "</thead>";
+                                echo "<tbody>";
+                                while ($row = mysqli_fetch_array($result)) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row['id_juego'] . "</td>";
+                                    echo "<td>" . $row['nombreJ'] . "</td>";
+                                    echo "<td>" . $row['plataforma'] . "</td>";
+                                    echo "<td>";
+                                    echo "<a href='consultar_juego.php?id_juego=" . $row['id_juego'] . "' title='Ver Registros' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                    echo "<a href='modificar_juego.php?id_juego=" . $row['id_juego'] . "' title='Modificar Registros' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                    echo "<a href='borrar_juego.php?id=_juego" . $row['id_juego'] . "' title='Borrar Registros' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                    echo "</td>";
+                                    echo "</tr>";
+                                }
+                                echo "</tbody>";
+                                echo "</table>";
+                                // Comprueba al entrar los registros en la bd
+                                mysqli_free_result($result);
+                            } else {
+                                echo "<p class='lead'><em>No hay registros disponibles.</em></p>";
+                            }
+                        } else {
+                            echo "ERROR: no se ha logrado acceder a la bd $sql. " . mysqli_error($conexion);
+                        }
+
+                        // Cerrar la conexion con la bd
+                        mysqli_close($conexion);
+                        ?>
                     </div>
                 </div>
-
             </div>
         </div>
         <!-- Termina el contenedor de las imagenes y el menu -->

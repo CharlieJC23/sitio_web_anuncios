@@ -6,3 +6,4 @@ Elaborado por:
 -Bazán Becerril Leonardo Yael
 -Rivera Regis José Carlos
 -Jose Anotnio Garcia Jimenez
+-Sánchez Pavón Javier

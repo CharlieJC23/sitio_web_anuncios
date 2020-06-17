@@ -35,11 +35,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">PELICULAS</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Alta</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Baja</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Consulta</a>
+                                 <a class="dropdown-item" href="../sitio_web_anuncios-master/Peliculas/CRUD/Catalogo.php">Modificaciones</a>
+                               
                             </div>
                         </li>
                         <li class="nav-item right-text">

@@ -136,6 +136,11 @@
             font-size: 1.25rem;
             padding: .3rem .8rem;
         }
+        #alertlib{
+            color: rgb(223, 23, 23);
+            background-color: #f2b2a2;
+            padding: 4px ;
+             }
         /*
         article{
             margin: 10px;
